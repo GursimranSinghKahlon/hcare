@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	 <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->	
+	  <script src="angular/ngapp.js"></script>	  
+	  <script src="js/jquery-2.1.4.js"></script>	
+</head>
+
+<body onload=getLocation() style=" background-image:url('hcare2.jpeg'); background-repeat:no-repeat; background-size:100% 100%;">
+
+	   
+<h1 style="text-align:center;text-decoration: underline;"> HEALTH CARE </h1>
+		
+		<form action="insert2.php" method="POST" style="text-align:center; background-color:#fff;opacity:0.8; margin:5% 30%;" name="login">
+		  <fieldset>
+			<legend>Personal information:</legend>
+			ID:
+			<input type="text" name="pid3" value=" " required>
+			<br><br>
+
+			
+		<div ng-app="myApp" ng-controller="myCtrl">	
+			Landmark:
+			<input type="text" name="landmark3" id="landmark" value="">
+			<br><br>
+
+			<p id="demo"></p>
+			
+			City:
+			<input type="text" name="city3" id="city" value="">
+			<br><br>	
+		<fieldset>
+			<legend>Location:</legend>		
+			X-Coordunate:
+			<input type="text" id="xcor" name="xcor3" value=0.00 >
+			<br><br>   
+			Y-Coordinate:
+			<input type="text" id="ycor" name="ycor3" value=0.00>
+			<br><br> 	
+		</fieldset>			
+		</div>	
+		
+		
+		<br>
+			Disease:
+			<input type="text" name="disease3" value="Typhoid">
+			<br>
+			<br>
+			<input type="submit" value="Submit">
+			<input type="button" value="Getdata" onclick="window.location.href='http://localhost/getdata2'">
+		  </fieldset>
+		</form>
+
+		
+		
+		
+		
+		
+			   <script>
+        $.ajax({
+            url: "https://geoip-db.com/jsonp",
+            jsonpCallback: "callback",
+            dataType: "jsonp",
+            success: function( location ) {
+                $('#city').val(location.city);
+/*				
+                $('#country').html(location.country_name);
+                $('#state').html(location.state);
+                $('#latitude').html(location.latitude);
+                $('#longitude').html(location.longitude);
+                $('#ip').html(location.IPv4);  */
+            }
+        });     
+    </script>
+	
+	<script>
+			var x = document.getElementById("demo");
+			
+
+			function getLocation() {
+				if (navigator.geolocation) {
+					x.innerHTML = "Geolocation updated";
+					navigator.geolocation.getCurrentPosition(showPosition);
+				} else { 
+					x.innerHTML = "Geolocation is not supported by this browser.";
+				}
+			}
+
+			function showPosition(position) {
+				document.getElementById("xcor").setAttribute("value", position.coords.latitude); 
+				document.getElementById("ycor").setAttribute("value", position.coords.longitude); 
+			}
+			
+			
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope) {
+		$scope.lastname = "jj";    
+		});	
+	</script>
+
+	</body>
+</html>
