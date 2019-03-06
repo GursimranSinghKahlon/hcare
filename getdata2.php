@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyCDgDPM1e51R6SgC3Jxcq3rSbPn0g9qoRQ&sensor=false" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js?key=#########&sensor=false" type="text/javascript"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <script src="angular/ngapp.js"></script>
