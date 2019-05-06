@@ -2,6 +2,6 @@
 Localizing health care services
 
 
-![alt text]
+![alt text]( https://github.com/GursimranSinghKahlon/hcare/blob/master/hcare1.png)
 
-![alt text](https://github.com/GursimranSinghKahlon/hcare/blob/master/HCARE5.pdf)
+https://github.com/GursimranSinghKahlon/hcare/blob/master/HCARE5.pdf
